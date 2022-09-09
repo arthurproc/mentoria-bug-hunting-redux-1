@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { onUrlSearch } from '../redux/actions/timeMachine';
 
 class Form extends Component {
   constructor(props) {
@@ -110,7 +111,7 @@ Form.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  searchUrl: (state) => dispatch(state),
+  searchUrl: (state) => dispatch(onUrlSearch(state)),
 });
 
-export default connect(mapDispatchToProps)(Form);
+export default connect(null, mapDispatchToProps)(Form);

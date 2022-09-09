@@ -2,6 +2,7 @@ const getClosestSnapshot = async (timestamp, url) => {
   try {
     const fetchResult = await fetch(`https://archive.org/wayback/available?url=${url}&timestamp=${timestamp}`);
     const apiResult = await fetchResult.json();
+    console.log(apiResult);
     return apiResult;
   } catch (error) {
     return {
